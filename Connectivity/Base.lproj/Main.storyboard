@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ack-QS-sbK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="p8H-RR-gL2">
+            <objects>
+                <navigationController id="ack-QS-sbK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sng-uc-lL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Cwx-9l-nRF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Rd-9d-Jne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-602" y="99"/>
+        </scene>
+        <!--角色选择-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Z4-LN-yNe">
+                                <rect key="frame" x="152" y="434" width="70" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="发送文件"/>
+                                <connections>
+                                    <action selector="sendBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFO-uk-hfy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Me-da-5OG">
+                                <rect key="frame" x="152" y="497" width="70" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="接收文件"/>
+                                <connections>
+                                    <segue destination="Mah-XQ-dB1" kind="show" identifier="" id="1RC-3m-fYZ"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Yd8-gr-gMi">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Me-da-5OG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="32x-eT-S8O"/>
+                            <constraint firstItem="Yd8-gr-gMi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KEO-mX-rKS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Z4-LN-yNe" secondAttribute="bottom" constant="200" id="OKf-JV-w5g"/>
+                            <constraint firstItem="Yd8-gr-gMi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UaC-0Z-iFO"/>
+                            <constraint firstItem="2Z4-LN-yNe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haP-QY-hlC"/>
+                            <constraint firstItem="6Me-da-5OG" firstAttribute="top" secondItem="2Z4-LN-yNe" secondAttribute="bottom" constant="30" id="r4Z-Fs-hFB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="角色选择" id="zXz-5s-alH"/>
+                    <connections>
+                        <outlet property="indicatorView" destination="Yd8-gr-gMi" id="xMA-qH-I19"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="99"/>
+        </scene>
+        <!--接收文件-->
+        <scene sceneID="Rkj-B5-W6U">
+            <objects>
+                <viewController id="Mah-XQ-dB1" customClass="ReciveFileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fJC-Cy-d8N"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kja-l2-GcG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J2X-5v-77b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="接收文件" id="qVY-cH-4rf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3I8-Pg-qlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="540"/>
+        </scene>
+    </scenes>
+</document>
